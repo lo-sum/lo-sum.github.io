@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>&lt;lorem-ipsum></title>
+    <script type="module" src="https://web-component-docs.github.io/elements.js"></script>
     <script src="./element.js"></script>
     <style>
         body {
             font-family: sans-serif;
+            --lorem-ipsum-par: 3;
+        }
+        code {
+            display: block;
+            padding: .2em;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            font-size:2em;
         }
     </style>
 </head>
 
 <body>
-    <lorem-ipsum par="5"></lorem-ipsum>
+    <h1>&lt;lorem-ipsum> Web Component</h1>
+    <web-component-attributes component="lorem-ipsum">
+        par | 3 | Number of paragraphs to display
+        min | 7 | Minimum number of sentences per paragraph
+        max | +2 | Maximum number of sentences per paragraph
+        replace | false | replace the &lt;lorem-ipsum> tag with the generated text
+        shadow | false | put the generated text in a shadow dom, move lightDOM &lt;style> elements to shadowDOM
+    </web-component-attributes>
+    <code>
+                &lt;lorem-ipsum par="1">&lt;/lorem-ipsum>
+            </code>
+    <lorem-ipsum par="1"></lorem-ipsum>
+    <lorem-ipsum></lorem-ipsum>
 </body>
 
 </html>
